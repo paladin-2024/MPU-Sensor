@@ -29,8 +29,18 @@ int16_t read16(uint8_t reg) {
 
 void setup() {
   Serial.begin(115200);
+  delay(500);
+  Serial.println("booting");
   Wire.begin(SDA_PIN, SCL_PIN);
+  Serial.println("wire begin done");
+
+  Wire.beginTransmission(MPU_ADDR);
+  uint8_t err = Wire.endTransmission();
+  Serial.print("i2c probe err=");
+  Serial.println(err);   // 0 = ACK received, device present. nonzero = no response.
+
   mpuWrite(0x6B, 0x00);   // wake MPU6050 (clear sleep bit in PWR_MGMT_1)
+  Serial.println("wake sent");
   delay(100);
 }
 

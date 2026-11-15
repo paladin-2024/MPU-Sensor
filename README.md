@@ -2,7 +2,7 @@
 
 ESP32 + MPU6050 tilt sensor, streamed over USB serial and visualized live on the desktop as a tilting horizon line.
 
-## Hardware
+## Hardware used
 
 ESP32-S3 DevKitC-1 + MPU6050 breakout, wired over I2C:
 

@@ -1,13 +1,12 @@
 // MPU6050 tilt sensor -> JSON over USB serial, read by direction.py on the Mac.
 // No external MPU6050 library needed: raw I2C register reads via Wire.h.
-//
 // Wiring (I2C): SDA -> GPIO8, SCL -> GPIO9, VCC -> 3V3, GND -> GND.
 // (Chosen to avoid the TFT pins already in use: 2,4,15,18,19,21.)
 
 #include <Wire.h>
 
-const int SDA_PIN = 8;
-const int SCL_PIN = 9;
+const int SDA_PIN = 9;
+const int SCL_PIN = 8;
 const uint8_t MPU_ADDR = 0x68;
 
 void mpuWrite(uint8_t reg, uint8_t val) {

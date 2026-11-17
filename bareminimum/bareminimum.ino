@@ -1,8 +1,10 @@
+//test script for the module lgitimity
+
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(125200);
 }
 
 void loop() {
-  Serial.println("alive");
+  Serial.println("alive and on");
   delay(500);
 }
